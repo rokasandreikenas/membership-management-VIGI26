@@ -1,6 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
 body {
   background-color: #edf2f6;
   margin: 0;
+  font-family: "Roboto", "Verdana";
 }
 
 a {
@@ -39,4 +42,63 @@ header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 24px;
+}
+
+.add-button {
+  border: none;
+  background-color: #4054be;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.add-button:hover {
+  background-color: #334398;
+}
+
+.add-button .plus {
+  margin-right: 12px;
+  font-size: 16px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #d0d0d0;
+  border-radius: 5px;
+  width: 31%;
+}
+
+.card .info {
+  text-align: center;
+  border-bottom: 1px solid #d0d0d0;
+  padding: 12px 0px 24px 0px;
+}
+
+.card .actions {
+  text-align: right;
+  padding: 24px;
+}
+
+.card .actions .delete-button {
+  background-color: #f5d1d4;
+  padding: 10px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card .actions .delete-button:hover {
+  background-color: #eca3a9;
+}
+
+.card .actions .delete-button i {
+  color: #d11a2a;
 }

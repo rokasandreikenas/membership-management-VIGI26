@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const { MongoClient } = require("mongodb");
+const { MongoClient, ObjectId } = require("mongodb");
 require("dotenv").config();
 
 const app = express();
@@ -37,6 +37,20 @@ app.post("/memberships", async (req, res) => {
       .db(DB)
       .collection(membershipsCollection)
       .insertOne(req.body);
+    await con.close();
+    res.send(data);
+  } catch (error) {
+    res.status(500).send({ error });
+  }
+});
+
+app.delete("/memberships/:id", async (req, res) => {
+  try {
+    const con = await client.connect();
+    const data = await con
+      .db(DB)
+      .collection(membershipsCollection)
+      .deleteOne({ _id: ObjectId(req.params.id) });
     await con.close();
     res.send(data);
   } catch (error) {
